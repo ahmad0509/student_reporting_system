@@ -1,0 +1,21 @@
+Student_ID,Name,Grade,City,Gender,Math_Total,Science_Total,Ch1_Math_Real Numbers,Ch2_Math_Quadratic Equations,Ch3_Math_Arithmetic Progressions,Ch4_Math_Circles,Ch5_Math_Trigonometry,Ch1_Science_Chemical Reactions,Ch2_Science_Acids and Bases,Ch3_Science_Metals and Non-Metals,Ch4_Science_Electricity,Ch5_Science_Magnetic Effects
+1,Student_1,10,Bangalore,Female,83,82,11,20,18,16,18,14,16,16,19,17
+2,Student_2,10,Kolkata,Female,70,78,14,14,12,15,15,10,19,20,18,11
+3,Student_3,10,Mumbai,Female,73,66,14,19,14,11,15,10,14,15,10,17
+4,Student_4,10,Chennai,Male,82,78,15,17,16,18,16,16,10,15,17,20
+5,Student_5,10,Chennai,Female,71,83,11,14,12,16,18,12,18,18,15,20
+6,Student_6,10,Kolkata,Male,78,67,15,15,14,20,14,15,10,13,10,19
+7,Student_7,10,Delhi,Female,61,70,12,17,10,10,12,17,14,11,10,18
+8,Student_8,10,Bangalore,Female,84,66,15,19,13,19,18,18,12,10,16,10
+9,Student_9,10,Kolkata,Male,69,74,12,11,15,18,13,12,15,13,18,16
+10,Student_10,10,Chennai,Male,74,63,11,18,13,15,17,12,12,13,15,11
+11,Student_11,10,Delhi,Male,70,82,12,10,17,12,19,16,13,16,19,18
+12,Student_12,10,Delhi,Male,69,79,15,10,16,14,14,15,14,13,17,20
+13,Student_13,10,Bangalore,Male,68,68,10,16,13,10,19,11,11,14,17,15
+14,Student_14,10,Chennai,Female,73,65,11,19,15,10,18,11,10,16,15,13
+15,Student_15,10,Kolkata,Male,80,69,19,14,17,20,10,10,12,14,18,15
+16,Student_16,10,Delhi,Male,72,74,19,13,19,10,11,19,19,16,10,10
+17,Student_17,10,Mumbai,Female,74,67,10,17,13,20,14,18,10,10,15,14
+18,Student_18,10,Mumbai,Male,78,79,12,14,16,17,19,17,12,20,16,14
+19,Student_19,10,Delhi,Male,78,62,10,13,18,20,17,13,13,12,14,10
+20,Student_20,10,Bangalore,Male,71,62,13,17,12,18,11,10,11,11,18,12

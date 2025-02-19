@@ -3,29 +3,28 @@ from crud import get_students
 
 def generate_score_chart():
     students = get_students()
-    print("Retrieved students:", students)  # Debugging line
-
-    if not students:  # Check if students list is empty
+    
+    if not students:
         print("No students found!")
         return
 
     try:
-        # Extract names and scores
-        names = [s["name"] for s in students]
-        scores = [float(s["score"]) for s in students]
+        # Extract names and average scores from science_total and math_total
+        names, scores = zip(*[
+            (s["name"], (float(s.get("science_total", 0)) + float(s.get("math_total", 0))) / 2)
+            for s in students
+        ])
 
-        print("Names:", names)  # Debugging log
-        print("Scores:", scores)  # Debugging log
-
-        # Create the bar chart
-        plt.figure(figsize=(10, 6))  # Adjust size for clarity
+        # Create and save the chart
+        plt.figure(figsize=(10, 6))
         plt.bar(names, scores, color='blue')
         plt.xlabel("Students")
-        plt.ylabel("Scores")
-        plt.title("Student Performance")
-        plt.xticks(rotation=45)  # Rotate names for better visibility
-        plt.tight_layout()  # Prevent clipping of labels
+        plt.ylabel("Average Score")
+        plt.title("Student Performance (Math & Science)")
+        plt.xticks(rotation=45)
+        plt.tight_layout()
         plt.savefig("score_chart.png")
+
         print("Chart saved as score_chart.png")
     except Exception as e:
         print(f"Error generating chart: {e}")

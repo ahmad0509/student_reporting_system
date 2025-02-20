@@ -1,7 +1,6 @@
 import boto3
 import csv
 import os
-import json
 from decimal import Decimal
  
 # Initialize DynamoDB
@@ -54,33 +53,24 @@ def load_data(csv_file):
             }
 
             # Separate Math and Science chapter marks
-            math_sum = 0
-            science_sum = 0
-
             for key, value in row.items():
-                if key.startswith("Ch") and "_Math_" in key:  # Example: Ch1_Math_Real Numbers
-                    try:
+             if key.startswith("Ch") and "_Math_" in key:  # Example: Ch1_Math_Real Numbers
+                 try:
                         student_data["math_chapters"][key] = Decimal(value)
-                        math_sum += Decimal(value)
-                    except:
+                 except:
                         student_data["math_chapters"][key] = Decimal(0)  # Default to 0 if invalid
-                elif key.startswith("Ch") and "_Science_" in key:  # Example: Ch1_Science_Chemical Reactions
-                    try:
+             elif key.startswith("Ch") and "_Science_" in key:  # Example: Ch1_Science_Chemical Reactions
+                try:
                         student_data["science_chapters"][key] = Decimal(value)
-                        science_sum += Decimal(value)
-                    except:
-                        student_data["science_chapters"][key] = Decimal(0)
+                except:
+                 student_data["science_chapters"][key] = Decimal(0)
 
-            # Ensure total subject scores match the sum of their chapter scores
-            student_data["math_total"] = math_sum
-            student_data["science_total"] = science_sum
 
-            table.put_item(Item=student_data)
+
 
     print("Student data loaded successfully!")
 
-# Run automatically when script is executed
 if __name__ == "__main__":
-    create_students_table()  # Ensure table is created before loading data
-    csv_filename = "/app/student_data.csv"  # Ensure this file exists inside the container
+    create_students_table()  
+    csv_filename = "/app/student_data.csv"  
     load_data(csv_filename)
